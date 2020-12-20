@@ -21,11 +21,40 @@ void QuickSort(int A[], int low, int high){
         QuickSort(A,pivot+1,high);
     }
 }
+// void swap(int *a,int *b){ 
+//     int tmp=*a;
+//     *a=*b;
+//     *b=*a;
+// }
+int Partition2(int A[],int p,int q){
+    int i=p,j,x=A[p];
+    for(j=p+1;j<q;j++){
+        if(A[j]<x){
+            i++;
+            int tmp=A[j];
+            A[j]=A[i];
+            A[i]=tmp;
+        }
+    }
+    int tmp=A[p];
+    A[p]=A[i];
+    A[i]=tmp;
+    return i;
+}
+void QuickSort2(int A[],int p,int q){
+    if(p<q){
+        int pivot=Partition2(A,p,q);
+        printf("pivot=%d\n",pivot);
+        QuickSort2(A,p,pivot);
+        QuickSort2(A,pivot+1,q);
+    }
+}
 int main(){
-    int a[]={1,2,6832,32812,894321,892,27,298};
-    QuickSort(a,0,7);
+    // printf("%d %d",a,b);
+    int A[]={1,2,6832,32812,894321,892,27,298};// {6,10,13,5,8,3,2,1};
+    QuickSort2(A,0,8);
     for(int i=0;i<8;i++){
-        printf("%d ",a[i]);
+        printf("%d ",A[i]);
     }
     return 0;
 }
