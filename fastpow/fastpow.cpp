@@ -6,7 +6,7 @@ int quickpow(int a,int b, const int c){
       ans=ans*base%c;
     }
     base=base*base%c;
-    base>>=1;
+    b>>=1;
   }
   return ans;
 }
