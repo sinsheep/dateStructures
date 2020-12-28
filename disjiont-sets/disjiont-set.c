@@ -10,6 +10,13 @@ void arrInitialize(int parent[],int *sz,int *rank)
         rank[i]=1;
     }
 }
+int findParentOptimize(int child, int* parent)
+{
+    if(child!=parent[child]){
+        parent[child]=findParentOptimize(parent[child],parent);
+    }
+    return child;
+}
 int findParent(int child, int* parent)
 {
     while (child != parent[child]) {
