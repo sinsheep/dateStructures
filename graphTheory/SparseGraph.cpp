@@ -19,6 +19,9 @@ void addEdge(int v,int w){
     }
     m++;
 }
+vector<int> adj(int v){
+    return g[v];
+}
 int main(){
     int x,y,k;
     cin>>n>>k;

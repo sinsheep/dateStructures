@@ -1,5 +1,6 @@
 #include<iostream>
 #include<cstdio>
+#include<vector>
 using namespace std;
 int directed,g[105][105],n,m;
 void addEdge(int v,int w){
@@ -12,6 +13,14 @@ void addEdge(int v,int w){
         g[w][v]=1;
     }
     m++;
+}
+vector<int> adj(int v){
+    vector<int> adj;
+    for(int i=0;i<n;i++){
+        if(g[v][i])
+            adj.push_back(i);
+    }
+    return adj;
 }
 int main(){
 
