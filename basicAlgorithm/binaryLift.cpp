@@ -20,14 +20,14 @@ int main(){
         cin>>vi[i];
     }
     for(int i=1;i<=n;i++){
-        go[0][i]=(i+k)%mod+1;
+        go[0][i]=(i+k)%n+1;
         sum[0][i]=vi[i];
     }
     int logn=31-__builtin_clz(n);
     for(int i=1;i<=logn;i++){
         for(int j=1;j<=n;j++){
-            go[i][j]=go[i-1][go[i-1][j]];
-            sum[i][j]=modadd(sum[i-1][j],sum[i-1][go[i-1][j]]);
+            go[i][j]=go[i-1][go[i-1][j]];//go[i][j] position before j position jump 2^i step 
+            sum[i][j]=modadd(sum[i-1][j],sum[i-1][go[i-1][j]]);//for jump 2^i equal jump 2^(i-1) plus 2^(i-1) step
         }
     }
     cin>>m;
