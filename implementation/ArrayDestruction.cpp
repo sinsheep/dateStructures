@@ -47,13 +47,14 @@ int main(){
                 m += 2;
             }
             if (!flag)
-                continue;
+                        continue;
             cout << "YES" << endl;
             cout << a[i] + a[2 * n] << endl;
             for (auto it : h) {
                 cout << it.fi << " " << it.se << endl;
             }
             ok=1;
+            break;
         }
         if(!ok)
         cout << "NO" << endl;
