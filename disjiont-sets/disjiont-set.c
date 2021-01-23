@@ -15,7 +15,7 @@ int findParentOptimize(int child, int* parent)
     if(child!=parent[child]){
         parent[child]=findParentOptimize(parent[child],parent);
     }
-    return child;
+    return parent[child];
 }
 int findParent(int child, int* parent)
 {
