@@ -4,11 +4,11 @@ using namespace std;
 int main(){
     ll n, l=1, r;
     cin >> n;
-    r = n >= 8 ? n: 8;
+    r = n >= 3 ? n: 8;
     ll ans=0;
     while(l <= r){
         ll mid = (l + r) >> 1;
-        ll d = int( mid * log10(mid) ) + 1;
+        ll d = int(mid * log10(mid)) + 1;
         if(d >= n){
             ans=mid;
             r = mid - 1;
