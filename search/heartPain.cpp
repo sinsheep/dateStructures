@@ -4,7 +4,7 @@ using namespace std;
 int main(){
     ll n, l=1, r;
     cin >> n;
-    r = n >= 3 ? n: 8;
+    r = n >= 2 ? n: 8;
     ll ans=0;
     while(l <= r){
         ll mid = (l + r) >> 1;
