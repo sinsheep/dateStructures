@@ -3,5 +3,8 @@
 !*.c
 !*.md
 !*/
+!*.go
+!*.java
+!*.py
 .ccls-cache
 
