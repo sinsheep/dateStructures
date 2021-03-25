@@ -11,8 +11,8 @@ public:
         vector<int> ans;
         for(int i = 0; i < intervals.size(); i++){
             int l = 0, r = arr.size(), q = intervals[i][1];
-            while(l<r){
-                int mid = l+(r - l)/2;
+            while(l < r){
+                int mid = (l + r) / 2;
                 if(arr[mid].first>=q){
                     r = mid;
                 }else{
@@ -22,7 +22,7 @@ public:
             if(r == arr.size()){
                 ans.push_back(-1);
             }else{
-                ans.push_back(arr[l].second);
+                ans.push_back(arr[r].second);
             }
         }
         return ans;
