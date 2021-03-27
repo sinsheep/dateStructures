@@ -50,11 +50,11 @@ int query_tree(int arr[], int tree[], int node, int start, int end, int l, int r
 int main()
 {
 
-  int arr[] = { 1, 3, 5, 7, 9, 11 };
-  int size = 6;
+  int arr[] = {1,2,3,4,5,6,7,8,9,10};
+  int size = 10;
   int tree[MAXL] = { 0 };
   build_tree(arr, tree, 0, 0, size - 1);
-  for (int i = 0; i < 15; i++) {
+  for (int i = 0; i < size * 2; i++) {
     printf("tree[%d]=%d\n", i, tree[i]);
   }
   puts("");
