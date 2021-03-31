@@ -1,4 +1,5 @@
 #include<bits/stdc++.h>
+using namespace std;
 int kmp_search(char p1[],char p2[],int next[]){
   int i = 0;
   int j = 0;
@@ -37,9 +38,9 @@ void creat_next(char p[],int next[]){
 }
 int main(){
   char p1[]="ababababca";
-  char p2[]="abababc";
+  char p2[]="abaabcaba";
   int next[100];
   creat_next(p2,next);
   putchar('\n');
-  std::cout<<kmp_search(p1, p2, next)<<std::endl;
+  cout<<kmp_search(p1, p2, next)<<endl;
 }
