@@ -20,6 +20,9 @@ public:
     }
 };
 int main(){
+    int a, b, c;
+    string s1="abcd", s2 ="abcjkd";
     Solution* s = new Solution();
+    cout<<s->longestCommonSubsequence(s1, s2)<<endl;
     return 0;
 }
